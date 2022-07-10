@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/block.css'%}">
+{% endblock style %}
+{% block body %}
+
+  <!--Pattern HTML-->
+  <section   style="margin-top: 200px;">
+			
+				<div style="margin-left: 400px;">
+					<a href="addbook"><img src="{% static 'images/add.png'%}" alt=""></a>
+					<p >Add Book</p>
+				</div>
+			
+			
+			
+				<div style="margin-left: 900px;margin-top: -230px;">
+					<a href="viewbook"><img src="{% static 'images/view.png'%}" alt=""></a>
+					<p>View All Book</p>
+				</div>
+			
+				
+			
+			
+		
+	</section>
+
+	
+{% endblock body %}

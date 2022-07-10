@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+<style type="text/css">
+    .bs-example{
+        margin: 0px;
+
+    }
+.navbar-brand{
+  font-size: 20px;
+  font-family: sans-serif;
+
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        {% if user.is_authenticated  %}
+            {% if user.is_staff %}
+            <a href="adminprofile" class="navbar-brand">Library Management</a>
+            {% endif %}
+            
+        {% else %}
+        <a href="/" class="navbar-brand">Library Management</a>
+        
+        {% endif %}
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                
+
+            
+            {% if user.is_authenticated %}
+            {% if user.is_staff %}
+            <div class="navbar-nav">
+                
+                <a href="addbook" class=" nav-link">Add Book</a>
+                
+            </div>
+            {% endif %}
+            <div class="navbar-nav">
+                
+                <a href="studentprofile" class=" nav-link">View All Book</a>
+                
+            </div>
+            <div class="navbar-nav">
+                
+                <a href="logoutuser" class=" nav-link">Logout</a>
+                
+            </div>
+            {% else %}
+            <div class="navbar-nav">
+                
+                <a href="loginuser" class="nav-item nav-link">Login</a>
+                
+            </div>
+
+            {% endif %}
+
+
+        </div>
+    </nav>
+</div>
+
+
+</body>
+</html>

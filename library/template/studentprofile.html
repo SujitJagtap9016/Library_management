@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+<h4 class="alert alert-primary">Books &gt; Total Record ({{book|length}}) 
+    
+  </h4>
+<center>
+<p><h1> List of all Books</h1> </p>
+</center>    
+    <table class="table" >
+
+        <thead>
+            <tr>
+                
+                <th>ISBN</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in book  %}
+            <tr>
+
+                <td> {{p.id}} </td>
+                <td> {{p.name}} </td>
+                <td> {{p.author}} </td>
+                <td> {{p.publisher}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    
+    </table>  
+    
+
+{% endblock body %}

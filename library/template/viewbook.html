@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+<center>
+<p><h1> List of all Books</h1> </p>
+</center>    
+    <table class="table" >
+
+        <thead>
+            <tr>
+                
+                <th>ISBN</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in book  %}
+            <tr>
+
+                <td> {{p.id}} </td>
+                <td> {{p.name}} </td>
+                <td> {{p.author}} </td>
+                <td> {{p.publisher}} </td>
+                <td> <a class="btn btn-success" href="/updatebook{{p.id}}"> Update </a> </td>
+                <td> <a class="btn btn-danger" href="/deletebook{{p.id}}"> Delete </a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    
+    </table>  
+    
+
+{% endblock body %}
